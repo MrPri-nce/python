@@ -34,6 +34,8 @@ class Television:
 
     def volume_up(self):
         if self.__status:
+            if self.__muted:
+                self.muted = False
             if self.__volume < self.max_volume:
                 self.__volume += 1
             else:
@@ -41,6 +43,8 @@ class Television:
 
     def volume_down(self):
         if self.__status:
+            if self.__muted:
+                self.muted = False
             if self.__volume > self.min_volume:
                 self.__volume -= 1
             else:
